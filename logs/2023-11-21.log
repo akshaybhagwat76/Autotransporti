@@ -1,0 +1,10 @@
+--------------------- Error(2023-11-21 12:57:36.7485)-------------------- 
+ Class: Utility.PageUtility.logError
+ Exception Type:System.DivideByZeroException
+  Exception Message:Attempted to divide by zero.
+   Stack Trace:   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at admin_Stats_Usage.loadData() in c:\Users\Amar\Downloads\Autotrasporti\Autotrasporti\Stats_Usage.aspx.cs:line 47
+   at admin_Stats_Usage.Page_Load(Object sender, EventArgs e) in c:\Users\Amar\Downloads\Autotrasporti\Autotrasporti\Stats_Usage.aspx.cs:line 22
+   Additional Info: 
+

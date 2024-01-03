@@ -1,0 +1,12 @@
+--------------------- Error(2023-07-15 11:24:23.8415)-------------------- 
+ Class: Utility.PageUtility.logError
+ Exception Type:System.FormatException
+  Exception Message:The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters. 
+   Stack Trace:   at System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at Utility.Crypto.Decrypt(String cipherString, Boolean useHashing) in c:\web\Staging\porpora-autotrasporti\App_Code\Utility\Crytpo.cs:line 45
+   at DriversEdit.loadData() in c:\web\Staging\porpora-autotrasporti\DriversEdit.aspx.cs:line 67
+   at DriversEdit.Page_Load(Object sender, EventArgs e) in c:\web\Staging\porpora-autotrasporti\DriversEdit.aspx.cs:line 26
+   Additional Info: 
+

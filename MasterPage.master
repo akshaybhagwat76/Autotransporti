@@ -1,0 +1,173 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    <title>Porpora Autotrasporti | Admin dashboard</title>
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <link href="assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+    <link href="assets/libs/toastr/dist/build/toastr.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+
+    <asp:ContentPlaceHolder runat="server" ID="chpHeader"></asp:ContentPlaceHolder>
+</head>
+
+<body runat="server" id="mainBody">
+    <form runat="server">
+        <asp:ScriptManager runat="server" ScriptMode="Release" EnableScriptGlobalization="true" EnableScriptLocalization="true" EnablePageMethods="true"></asp:ScriptManager>
+        <div id="main-wrapper">
+            <div class="app-container"></div>
+            <header class="topbar">
+                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                    <div class="navbar-header">
+                        <!-- This is for the sidebar toggle which is visible on mobile only -->
+                        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
+                            class="ti-menu ti-close"></i></a>
+                        <div class="navbar-brand text-center">
+                            <!-- Logo icon -->
+                            <a runat="server" href="~/Dashboard.aspx" style="width: 100%; overflow: hidden; margin-left: 10px; margin-right: 10px">
+
+                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                <!-- Dark Logo icon -->
+                                <img runat="server" src="~/assets/images/logo_bianco.png" alt="homepage" class="dark-logo" style="height: 60px" id="imgLogoDark" />
+                                <!-- Light Logo icon -->
+                                <img runat="server" src="~/assets/images/logo_bianco.png" alt="homepage" class="light-logo" style="height: 60px" id="imgLogoLight" />
+
+
+                            </a>
+                            <a class="d-none d-md-block op-7 sidebartoggler" href="javascript:void(0)">
+                                <span class="line line-1"></span>
+                                <span class="line line-2"></span>
+                                <span class="line line-3"></span>
+                            </a>
+                        </div>
+
+                        <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)"
+                            data-toggle="collapse" data-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i
+                                class="ti-more"></i></a>
+                    </div>
+
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav float-left mr-auto">
+                        </ul>
+                        <ul class="navbar-nav float-right align-items-center">
+                            <li class="nav-item d-none d-lg-block ml-2 text-center">
+                                <a href="Users.aspx" class="text-white" style="font-size: 12px"><i class="fa icon-people" style="font-size: 1.7em"></i>
+                                    <br />
+                                    Operatori</a>
+                            </li>
+                            <li class="nav-item d-none d-lg-block ml-2 text-center">
+                                <asp:LinkButton runat="server" ID="lnkLogout" CssClass="text-white" Style="font-size: 12px" OnClick="lnkLogout_Click"><i data-feather="log-out" class="feather-icon"></i><br />Esci</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </header>
+            <aside class="left-sidebar">
+                <div class="user-profile text-center pt-5">
+
+                    <div class="profile-section text-left pl-4">
+                        <i class="fa fa-user-circle"></i>&nbsp;<span class="op-7 mb-0 font-14">Bentornato</span>
+
+                        <p class="font-weight-light font-18">
+                            <asp:Literal runat="server" ID="litCurrentUser"></asp:Literal>
+                        </p>
+                    </div>
+                </div>
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav pt-2">
+                        <ul id="sidebarnav">
+
+                            <li class="sidebar-item">
+                                <a href="Dashboard.aspx" class="sidebar-link"><i class="fa icon-pie-chart"></i><span class="hide-menu">Dashboard</span></a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="Drivers.aspx" class="sidebar-link"><i class="fa icon-people"></i><span class="hide-menu">Autisti</span></a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="Plates.aspx" class="sidebar-link"><i class="fa icon-speedometer"></i><span class="hide-menu">Targhe</span></a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="Maintenance.aspx" class="sidebar-link"><i class="fa icon-wrench"></i><span class="hide-menu">Manutenzioni</span></a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="Documents.aspx" class="sidebar-link"><i class="fa icon-docs"></i><span class="hide-menu">D.D.T.</span></a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false"><i class="fa icon-chart"></i><span class="hide-menu">Report</span></a>
+                                <ul aria-expanded="false" class="collapse first-level base-level-line">
+                                    <li class="sidebar-item"><a href="Stats_Workdays.aspx" class="hide-menu">Giornate lavorative</a></li>
+                                    <li class="sidebar-item"><a href="Stats_Fee.aspx" class="hide-menu">Tariffe dovute</a></li>
+                                    <li class="sidebar-item"><a href="Stats_Usage.aspx" class="hide-menu">Consumi</a></li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+
+            <div class="page-wrapper" runat="server" id="divPageWrapper" style="min-height: 450px">
+                <asp:ContentPlaceHolder runat="server" ID="chpContent"></asp:ContentPlaceHolder>
+
+                <footer class="footer text-center">
+                    Developed by
+                    <img src="assets/images/favicon.ico" />
+                    <a href="https://www.appgear.it/" target="_blank">AppGear</a>
+                </footer>
+
+            </div>
+
+        </div>
+        <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- apps -->
+        <script src="assets/libs/app.min.js"></script>
+        <script src="assets/libs/app.init-menusidebar.min.js"></script>
+        <script src="assets/libs/app-style-switcher.min.js"></script>
+        <script src="assets/libs/feather.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="assets/libs/sparkline/sparkline.js"></script>
+        <!--Wave Effects -->
+        <!-- themejs -->
+        <!--Menu sidebar -->
+        <script src="assets/libs/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="assets/libs/sweetalert2/dist/sweetalert2.all.min.js"></script>
+        <script src="assets/libs/toastr/dist/toastr.js"></script>
+        <script src="assets/libs/custom.min.js"></script>
+        <script src="assets/libs/customScripts.js"></script>
+
+
+        <asp:ContentPlaceHolder runat="server" ID="chpScripts"></asp:ContentPlaceHolder>
+    </form>
+</body>
+
+</html>

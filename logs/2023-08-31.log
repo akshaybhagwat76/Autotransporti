@@ -1,0 +1,20 @@
+--------------------- Error(2023-08-31 14:56:35.0948)-------------------- 
+ Class: Utility.PageUtility.logError
+ Exception Type:System.DivideByZeroException
+  Exception Message:Attempted to divide by zero.
+   Stack Trace:   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at admin_Stats_Usage.loadData() in c:\web\Staging\porpora-autotrasporti\Stats_Usage.aspx.cs:line 64
+   at admin_Stats_Usage.Page_Load(Object sender, EventArgs e) in c:\web\Staging\porpora-autotrasporti\Stats_Usage.aspx.cs:line 22
+   Additional Info: 
+
+--------------------- Error(2023-08-31 14:56:35.5798)-------------------- 
+ Class: Utility.PageUtility.logError
+ Exception Type:System.DivideByZeroException
+  Exception Message:Attempted to divide by zero.
+   Stack Trace:   at System.Decimal.FCallDivide(Decimal& d1, Decimal& d2)
+   at System.Decimal.op_Division(Decimal d1, Decimal d2)
+   at admin_Stats_Usage.loadData() in c:\web\Staging\porpora-autotrasporti\Stats_Usage.aspx.cs:line 64
+   at admin_Stats_Usage.Page_Load(Object sender, EventArgs e) in c:\web\Staging\porpora-autotrasporti\Stats_Usage.aspx.cs:line 22
+   Additional Info: 
+
